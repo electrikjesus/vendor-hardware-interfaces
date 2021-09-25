@@ -39,7 +39,6 @@ cc_binary {
         "libhardware",
         "libhwbinder",
         "libhidlbase",
-        "libhidltransport",
         "liblog",
         "libutils",
         "libusb",
