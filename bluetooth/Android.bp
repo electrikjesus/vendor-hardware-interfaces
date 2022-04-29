@@ -37,7 +37,6 @@ cc_binary {
         "libbase",
         "libcutils",
         "libhardware",
-        "libhwbinder",
         "libhidlbase",
         "liblog",
         "libutils",
