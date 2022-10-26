@@ -15,6 +15,7 @@
 //
 
 #include "h4_protocol.h"
+#include "esco_parameters.h"
 
 #define LOG_TAG "android.hardware.bluetooth-hci-h4"
 
@@ -42,6 +43,10 @@ typedef uint16_t UINT16;
 #define HCI_READ_LOCAL_SUPPORTED_CMDS (0x0002 | HCI_GRP_INFORMATIONAL_PARAMS)
 #define HCI_GRP_HOST_CONT_BASEBAND_CMDS (0x03 << 10) /* 0x0C00 */
 #define HCI_RESET (0x0003 | HCI_GRP_HOST_CONT_BASEBAND_CMDS)
+#define HCI_GRP_LINK_CONTROL_CMDS (0x01 << 10)       /* 0x0400 */
+#define HCI_ENH_SETUP_ESCO_CONNECTION (0x003D | HCI_GRP_LINK_CONTROL_CMDS)
+#define HCI_ENH_ACCEPT_ESCO_CONNECTION (0x003E | HCI_GRP_LINK_CONTROL_CMDS)
+#define HCIC_PREAMBLE_SIZE 3
 
 #include <errno.h>
 #include <fcntl.h>

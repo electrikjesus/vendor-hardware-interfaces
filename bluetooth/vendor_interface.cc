@@ -15,6 +15,7 @@
 //
 
 #include "vendor_interface.h"
+#include "esco_parameters.h"
 
 #define LOG_TAG "android.hardware.bluetooth@1.0-service.vbt"
 #include <cutils/properties.h>
@@ -32,6 +33,10 @@ typedef uint16_t UINT16;
 
 #define STREAM_TO_UINT8(u8, p)   {u8 = (UINT8)(*(p)); (p) += 1;}
 #define STREAM_TO_UINT16(u16, p) {u16 = ((UINT16)(*(p)) + (((UINT16)(*((p) + 1))) << 8)); (p) += 2;}
+
+#define HCI_GRP_LINK_CONTROL_CMDS (0x01 << 10)       /* 0x0400 */
+#define HCI_ENH_SETUP_ESCO_CONNECTION (0x003D | HCI_GRP_LINK_CONTROL_CMDS)
+#define HCI_ENH_ACCEPT_ESCO_CONNECTION (0x003E | HCI_GRP_LINK_CONTROL_CMDS)
 
 static const char* VENDOR_LIBRARY_NAME = "libbt-vendor.so";
 static const char* VENDOR_LIBRARY_SYMBOL_NAME =
