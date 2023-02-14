@@ -16,8 +16,6 @@ cc_library_static {
     shared_libs: [
         "libbase",
         "libhidlbase",
-        "libhidltransport",
-        "libhwbinder",
         "liblog",
         "libutils",
         "libcutils",
@@ -81,8 +79,6 @@ cc_binary {
         "libbase",
         "libcutils",
         "libhidlbase",
-        "libhidltransport",
-        "libhwbinder",
         "libutils",
         "android.hardware.health@2.0",
     ],
