@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef SENSORS_2_0_IIOHAL_MEDIATION_V2_0_SENSOR_H_
-#define SENSORS_2_0_IIOHAL_MEDIATION_V2_0_SENSOR_H_
+#ifndef SENSORS_2_1_IIOHAL_MEDIATION_V2_1_SENSOR_H_
+#define SENSORS_2_1_IIOHAL_MEDIATION_V2_1_SENSOR_H_
 
 #include <android/hardware/sensors/1.0/types.h>
 #include <android/hardware/sensors/2.1/types.h>
@@ -171,10 +171,15 @@ class InclinometerSensor : public Sensor {
     InclinometerSensor(int32_t sensorHandle, ISensorsEventCallback* callback);
 };
 
+class HingeAngleSensor : public OnChangeSensor {
+  public:
+    HingeAngleSensor(int32_t sensorHandle, ISensorsEventCallback* callback);
+};
+
 }  // namespace implementation
 }  // namespace V2_X
 }  // namespace sensors
 }  // namespace hardware
 }  // namespace android
 
-#endif  // SENSORS_2_0_IIOHAL_MEDIATION_V2_0_SENSOR_H_
+#endif  // SENSORS_2_1_IIOHAL_MEDIATION_V2_1_SENSOR_H_
