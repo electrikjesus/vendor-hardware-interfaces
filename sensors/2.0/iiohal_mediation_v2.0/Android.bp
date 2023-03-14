@@ -33,6 +33,7 @@ cc_library_static {
         "libiio_client/utilities.c",
         "libiio_client/sort.c",
         "libiio_client/network.c",
+        "libiio_client/network-unix.c",
     ],
     header_libs: [
         "android.hardware.sensors@2.X-shared-utils",
