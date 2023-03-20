@@ -503,6 +503,28 @@ InclinometerSensor::InclinometerSensor(int32_t sensorHandle,
     mSensorInfo.flags = 0;
 }
 
+HingeAngleSensor::HingeAngleSensor(int32_t sensorHandle,
+        ISensorsEventCallback* callback)
+    : OnChangeSensor(callback) {
+    mSensorInfo.sensorHandle = sensorHandle;
+    mSensorInfo.name = "Hinge Angle Sensor";
+    mSensorInfo.vendor = "BlissLabs";
+    mSensorInfo.version = 1;
+    mSensorInfo.type = SensorType::HINGE_ANGLE;
+    mSensorInfo.typeAsString = "";
+    mSensorInfo.maxRange = 360.0f;
+    mSensorInfo.resolution = 1.0f;
+    mSensorInfo.power = 0.001f;
+    mSensorInfo.minDelay = 40 * 1000;  // microseconds
+    mSensorInfo.maxDelay = 10 * 1000 * 10;  // microseconds
+    mSensorInfo.fifoReservedEventCount = 0;
+    mSensorInfo.fifoMaxEventCount = 0;
+    mSensorInfo.requiredPermission = "";
+    mSensorInfo.flags = static_cast<uint32_t>(V1_0::SensorFlagBits::ON_CHANGE_MODE |
+                                                V1_0::SensorFlagBits::WAKE_UP |
+                                                V1_0::SensorFlagBits::DATA_INJECTION);
+}
+
 }  // namespace implementation
 }  // namespace V2_X
 }  // namespace sensors

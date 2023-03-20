@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-#ifndef SENSORS_2_0_IIOHAL_MEDIATION_V2_0_SENSORS_H_
-#define SENSORS_2_0_IIOHAL_MEDIATION_V2_0_SENSORS_H_
+#ifndef SENSORS_2_1_IIOHAL_MEDIATION_V2_1_SENSORS_H_
+#define SENSORS_2_1_IIOHAL_MEDIATION_V2_1_SENSORS_H_
 
 #include "EventMessageQueueWrapper.h"
 #include "Sensor.h"
 
-#include <android/hardware/sensors/2.0/ISensors.h>
-#include <android/hardware/sensors/2.0/types.h>
+#include <android/hardware/sensors/2.1/ISensors.h>
+#include <android/hardware/sensors/2.1/types.h>
 #include <fmq/MessageQueue.h>
 #include <hardware_legacy/power.h>
 #include <hidl/MQDescriptor.h>
@@ -74,6 +74,7 @@ struct Sensors : public ISensorsInterface, public ISensorsEventCallback {
         AddSensor<GeomagnaticRotationVector>();
         AddSensor<OrientationSensor>();
         AddSensor<InclinometerSensor>();
+        AddSensor<HingeAngleSensor>();
 #endif
     }
 
@@ -384,4 +385,4 @@ struct Sensors : public ISensorsInterface, public ISensorsEventCallback {
 }  // namespace hardware
 }  // namespace android
 
-#endif  // SENSORS_2_0_IIOHAL_MEDIATION_V2_0_SENSORS_H_
+#endif  // SENSORS_2_1_IIOHAL_MEDIATION_V2_1_SENSORS_H_
